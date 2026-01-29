@@ -1,0 +1,41 @@
+TITLE: Olivia Tallent, Section B,  DNA Analyzer
+PROBLEM DESCRIPTION: 
+The program will take in a file containing a DNA sequence and work to analyze it. This will be through a variety of ways, transforming 
+the data into RNA and protein sequences. Additionally, with two DNA sequences inputted, comparison can occur. This can be by comparing 
+their nucleotide sequences or their protein sequences, finding clusters of similarities. Then the project will output a report visual, 
+where the inputted data can be visualized strand by strand by looking at the nucleotides and proteins and a visual symbolyzing clusters.
+PROGRAM DOCUMENTATION:
+The program includes SFML so it must be built with SFML and the provided dataset files. When the script is run, the user must input the
+datasets they wish to analyze (this is guided by the console's text). Once the data has been compiled and the SFML window opens, the user
+can press the arrow keys: up/down to navigate between strands and left/right to scroll through the current strand. One feature that is outlined
+in the DNAStrand class but not in the visual output is the ability to modify nucleotides and codons. In a future iteration, this could be added 
+to the visual (and additionally the functionality for additions/deletions in the DNA strand) which could allow for more data manipulation and 
+analysis. Another aspect that I intended to include is the analysis of each strand from a start to a stop codon. Because of the magnitude of the 
+dataset I used, I wasn't able to implement this in the time given, but it could be something to analyze in the future.
+CLASS DESCRIPTION:
+The custom class that I created was the DNAStrand class. This class encapsulated all of the data storage and functions in managing not only a
+list of nucleotides, but its pair sequence, its codon sequence, and its protein sequence. In addition to this, it had functionality that 
+allowed for comparison between two strands and additionally allowed for the drawing of the strands.
+LIST DATA STRUCTURE:
+I chose to use a vector to store my data. I used this because of the fact that I needed to do a lot of indexing of the vectors that I used.
+The vector also had the functions that I needed, as I rarely needed anything more than accessing at a specific index, and I wanted it to be
+able to scale to my large datasets. The vector held not only the list of data inputted, but the list for the pair sequence and the list of 
+pointers to proteins.
+FILE I/O: 
+Text files were be used to retrieve the inputted DNA sequences at the beginning of the program. The user is able to input what files they would 
+like to read from. It was very important to my program to be able to read in data as it defined what analysis was done. Without this input there
+would be no data to analyze.
+PROJECT MODIFICATIONS: 
+The main things that I changed from the original were the methods of presenting the data. I had originally said that the user would be able to 
+input the types of analysis they wanted to perform on the data, but this became too complicated in the end. Because there were 4 primary functions
+I decided that it would be easier to allow the user to look at all of the resulting information at once and be able to scroll through strands as
+they wished. One other aspect that I modified was the class structure itself. At first I just wrote down all of the different functions for reading
+and modifying data, but I didn't have a plan at all for the visual component. When making the final project, I had to add functions to the DNAStrand
+class to perform this visual functionality.
+REFLECTIONS: 
+Through this project I learned a lot about what planning can do for a project. In a lot of other programming projects I have done, I fail to plan
+ahead for what my functions are going to look like, and add them as I see fit. In this project however, because I had to write a proposal, I was
+forced to think it through beforehand. This made it a lot easier when I was going about writing the header files and the skeleton of the DNAStrand
+class because I could just directly copy from my outline and begin writing the functions. One thing I might do differently in a future project is
+think more clearly about where my for loops are going (including drawing them out). I spent a lot of time debugging my cluster algorithm and my
+display functions because the way that I was iterating through my for loops didn't actually match my data.
